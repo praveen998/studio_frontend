@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Content with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/index.js"></script> 
+  
+      <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Styling the image icon */
+    .icon {
+      width: 50px;
+      height: 50px;
+      margin: 20px;
+      cursor: pointer;
+    }
+    .icon:hover {
+      opacity: 0.7;  /* Add hover effect */
+    }
+    .folder-item {
+      display: flex;              /* Use Flexbox to align items */
+      align-items: center;       /* Vertically center the items */
+      margin: 10px 0;           /* Space between folder items */
+    }
+
+  </style>
+</head>
+<body>
+    <!-- <img src="../static/images/before.png" alt="Folder Icon" class="icon" onclick="previous_page()">  -->
+    <div class="container mt-5">
+
+        <div class="row" id="folder-data">
+            <div class="col-12"></div>
+        </div>
+    </div>
+    
+   <div class="container mt-4">
+    <h3>Create New Project</h3>
+    <div id="message"></div> <!-- Alert message container -->
+    <form id="projectForm" enctype="multipart/form-data">
+        <input type="text" name="project_name" placeholder="Enter project name" required>
+        <input type="submit" value="Upload" class="btn btn-primary">
+    </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
