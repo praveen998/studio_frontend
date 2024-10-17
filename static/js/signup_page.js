@@ -27,7 +27,7 @@ $(document).ready(function() {
         if (password === repassword) {
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/login_auth', // Backend endpoint for authentication
+            url: 'http://127.0.0.1:8000/signup_view', // Backend endpoint for authentication
             type: 'POST', // HTTP method
             contentType: 'application/json', // Send as JSON
             headers: {
@@ -36,12 +36,12 @@ $(document).ready(function() {
             data: JSON.stringify({ // Convert data to JSON
                 username: username,
                 password: password,
-                useremail: useremail,
+                email: useremail,
             }),
             success: function(response) {
                 // Handle successful login
-                alert('Login successful!');
-                window.location.href = 'http://127.0.0.1:8000/';  // You can redirect or show a success message here
+                alert('account created successful!');
+                window.location.href = 'http://127.0.0.1:8000/dashboard';  // You can redirect or show a success message here
                 // Example: window.location.href = '/dashboard'; // Uncomment this to redirect to dashboard
             },
             error: function(xhr) {
@@ -49,8 +49,8 @@ $(document).ready(function() {
                 if (xhr.responseJSON && xhr.responseJSON.message) {
                     alert(xhr.responseJSON.message); // Show error message from response
                 } else {
-                    alert('An unexpected error occurred.');
-                    window.location.href = 'http://127.0.0.1:8000/login'; 
+                    alert('account not created! create again');
+                    window.location.href = 'http://127.0.0.1:8000/signup_page'; 
                      // Fallback error message
                 }
             }
